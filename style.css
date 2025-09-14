@@ -10,3 +10,53 @@ body{
     height: 100vh;
     background-color: #494d5f;
 }
+
+h1{
+    text-align: center;
+    margin: 100px auto 50px;
+    font-weight: 600;
+}
+
+form{
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #60657b;
+    border-radius: 8px;
+}
+
+#search-box{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 0 30px;
+}
+
+.search-btn{
+    padding: 0 30px;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: #90ee90;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+      border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+}
+
+.search-btn:hover{
+    background-color: #76c776;
+}
+
+#search-box::placeholder{
+    color: #fff;
+}
