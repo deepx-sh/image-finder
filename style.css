@@ -60,3 +60,21 @@ form{
 #search-box::placeholder{
     color: #fff;
 }
+
+#show-more-btn{
+    background-color: #90ee90;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+    outline: none;
+    font-weight: 500;
+    cursor: pointer;
+    display: none;
+    margin: 10px auto 100px;
+
+}
+
+#show-more-btn:hover{
+    background-color: #76c776;
+}
