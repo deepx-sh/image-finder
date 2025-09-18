@@ -28,7 +28,7 @@ searchBtn.addEventListener("click", () => {
 async function getImages(keyword) {
     
     try {
-        let url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=`;
+        let url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=&per_page=12`;
         
         const response = await fetch(url);
         const result = await response.json();
