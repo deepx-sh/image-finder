@@ -2,7 +2,7 @@ const form = document.querySelector("#search-form");
 const inp = document.querySelector("#search-box");
 const searchBtn = document.querySelector(".search-btn");
 const ic=document.querySelector(".image-container")
-
+const showMoreBtn=document.querySelector("#show-more-btn")
 
 let page = 1;
 
@@ -57,4 +57,11 @@ function showImages(data) {
 
         ic.appendChild(link);
     })
+
+    showMoreBtn.style.display="block"
 }
+
+showMoreBtn.addEventListener("click", () => {
+    page++;
+    getImages(inp.value);
+})
