@@ -8,12 +8,33 @@ form.addEventListener("submit", (e) => {
 });
 
 searchBtn.addEventListener("click", () => {
-    let keyword = inp.ariaValueMax;
+    let keyword = inp.value;
 
     if (keyword.trim() === '' || keyword.trim().length === 0) {
         alert("Please enter a search keyword.");
+        inp.value = '';
     }
     else {
         getImages(keyword);
     }
-})
+});
+
+let page = 1;
+
+async function getImages(keyword) {
+    
+    try {
+        let url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=YOUR_API_KEY`;
+        
+        const response = await fetch(url);
+        const result = await response.json();
+
+        const data = result.results;
+        console.log(data);
+        
+        
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
