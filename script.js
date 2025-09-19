@@ -19,6 +19,7 @@ searchBtn.addEventListener("click", () => {
         inp.value = '';
     }
     else {
+        ic.innerHTML=""
         getImages(keyword);
     }
 });

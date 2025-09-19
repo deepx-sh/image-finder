@@ -6,9 +6,15 @@
 
 }
 body{
-    width: 100%;
-    height: 100vh;
-    background-color: #494d5f;
+    min-height: 100vh;
+    background:linear-gradient(135deg,#141E30,#243B55);
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1rem;
 }
 
 h1{
@@ -18,15 +24,11 @@ h1{
 }
 
 form{
-    width: 90%;
-    max-width: 600px;
-    margin: auto;
-    height: 50px;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #60657b;
-    border-radius: 8px;
+    gap:10px;
 }
 
 #search-box{
@@ -36,25 +38,29 @@ form{
     outline: none;
     background: transparent;
     color: #fff;
-    font-size: 1.3rem;
-    padding: 0 30px;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .search-btn{
-    padding: 0 30px;
-    height: 100%;
+    padding: 12 20px;
     border: none;
     outline: none;
-    background-color: #90ee90;
+    background: #00C9FF;
+    background: linear-gradient(45deg,#00C9FF,#92FE9D);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: bold;
     cursor: pointer;
-      border-top-right-radius: 7px;
-        border-bottom-right-radius: 7px;
+    border-radius: 8px;
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .search-btn:hover{
-    background-color: #76c776;
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 #search-box::placeholder{
@@ -65,32 +71,47 @@ form{
     background-color: #90ee90;
     border: none;
     font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 6px;
+    padding: 12px 25px;
+    border-radius: 8px;
     outline: none;
+    background: linear-gradient(45deg,#FF414C,#FF4B2B);
     font-weight: 500;
     cursor: pointer;
     display: none;
-    margin: 10px auto 100px;
+    margin: 2rem auto;
+    color:#fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 
 }
 
 #show-more-btn:hover{
-    background-color: #76c776;
+   transform: scale(1.05);
+   opacity: 0.9;
 }
 
 .image-container{
-    width: 80%;
+    width: 100%;
     margin: 100px auto 50px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
+    max-width: 1000px;
 }
 
+.image-container a{
+    overflow: hidden;
+    border-radius: 12px;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 .image-container img{
     width: 100%;
-    height: 200px;
-    border-radius: 8px;
+    height: 100%;
+    transition: transform 0.4s ease;
     object-fit: cover;
     
+}
+
+.image-container a:hover img{
+    transform: scale(1.1);
 }
