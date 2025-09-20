@@ -107,3 +107,39 @@ form{
 .image-container a:hover img{
     transform: scale(1.1);
 }
+
+.error-message{
+    background:rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 1rem 0;
+    text-align: center;
+    display: none;
+}
+
+.loading{
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-spinner{
+    width: 40px;
+    height: 40px;
+    border: 3px solid #0072ff;
+    border-top: 3px solid #0f2027;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
