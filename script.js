@@ -35,14 +35,15 @@ function handleSearch() {
 async function getImages(keyword) {
     showLoading();
     try {
-        let url = `https://api.unsplash.com/search/photos?page=${page}&query=${keyword}&client_id=&per_page=12`;
+        let url = `/api/images/keyword=${keyword}&page=${page}`;
         
         const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`API Error: ${response.status}`);
-        }
+       
         const result = await response.json();
 
+         if (!result.ok) {
+            throw new Error(result.error || "Failed to fetch data. Please try again later.");
+        }
         const data = result.results;
         if (data.length ===0 && page === 1) {
             showError("No image found. Try different search term");
