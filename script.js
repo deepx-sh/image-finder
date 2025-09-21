@@ -35,12 +35,10 @@ function handleSearch() {
 async function getImages(keyword) {
     showLoading();
     try {
-        let url = `/api/images/keyword=${keyword}&page=${page}`;
+        let url = `/api/images?keyword=${keyword}&page=${page}`;
         
         const response = await fetch(url);
-       
         const result = await response.json();
-
          if (!result.ok) {
             throw new Error(result.error || "Failed to fetch data. Please try again later.");
         }
