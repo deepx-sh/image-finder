@@ -38,8 +38,9 @@ async function getImages(keyword) {
         let url = `/api/images?keyword=${keyword}&page=${page}`;
         
         const response = await fetch(url);
+         
         const result = await response.json();
-         if (!result.ok) {
+        if (!response.ok) {
             throw new Error(result.error || "Failed to fetch data. Please try again later.");
         }
         const data = result.results;

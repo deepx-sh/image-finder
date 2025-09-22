@@ -7,8 +7,7 @@ export default async function handler(req,res) {
     }
 
     try {
-        const response = await fetch(`https://api.unsplash.com/search/photos?page=${page || 1}&query=${keyword}&client_id=${process.env.UNSPLASH_KEY}&per_page=12`);
-
+        const response = await fetch(`https://api.unsplash.com/search/photos?page=${page || 1}&query=${keyword}&client_id=${process.env.UNSPLASH_KEY}&per_page=12`);   
         if (!response.ok) {
             return res.status(response.status).json({ error: "Failed to fetch images" });
         }
